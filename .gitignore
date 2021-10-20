@@ -282,3 +282,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+##############
+## Audacity ##
+##############
+
+*.aup3
