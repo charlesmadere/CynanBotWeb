@@ -3,21 +3,23 @@ class ChatBandManager {
     baseDir = "resources";
 
     bassFiles = [
-        "Castlevania 3/Demon Seed Bass (Shortened).mp3",
-        "Gimmick!/Bass 1.mp3",
-        "Gimmick!/Bass 2.mp3",
+        "Battletoads/Intro (Bass).mp3",
+        "Castlevania 3/Demon Seed (Bass, Clipped).mp3",
+        "Gimmick!/No Limits (Bass, Clipped).mp3",
+        "Gimmick!/Untitled (Bass).mp3",
         "Street Fighter 2/Bass 1.mp3",
         "Super Mario Bros 3/Bass 1 (Super Hacked).mp3",
-        "Super Mario World/Boss Battle (Bass).mp3",
-        "Super Mario World/Invincible (Bass).mp3"
+        "Super Mario World/Boss Battle (Bass, Boosted).mp3",
+        "Super Mario World/Invincible (Bass).mp3",
+        "ToeJam & Earl Panic on Funkotron/Rocket Rap (Bass, Amplified).mp3"
     ];
 
     drumFiles = [
-        "Batman - The Video Game/Drums 1.mp3",
-        "Contra/Drums 1.mp3",
-        "Ninja Gaiden/Depth of Wickedness (Drums 2).mp3",
+        "Batman - The Video Game/Drums (Clipped).mp3",
+        "Contra/Untitled (Drums, Clipped).mp3",
+        "Ninja Gaiden/Depth of Wickedness (Drums 2, Clipped).mp3",
         "Super Mario Bros 3/Drums 1.mp3",
-        "Teenage Mutant Ninja Turtles/Drums 1.mp3"
+        "Teenage Mutant Ninja Turtles/Introduction (Drums, Clipped).mp3"
     ];
 
     guitarFiles = [
