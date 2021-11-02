@@ -30,6 +30,8 @@ class ChatBandManager {
     ];
 
     magicFiles = [
+        "Ninja Gaiden II/Thunder.mp3",
+        "StarTropics/Track 34 (Magic).mp3"
     ];
 
     pianoFiles = [
