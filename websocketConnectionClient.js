@@ -29,6 +29,9 @@ class ChatBandManager {
         "Undertale/Guitar 1.mp3"
     ];
 
+    magicFiles = [
+    ];
+
     pianoFiles = [
         "Chrono Trigger/Piano 1.mp3",
         "Pokémon Red/Celadon City (Piano).mp3",
@@ -81,6 +84,10 @@ class ChatBandManager {
 
             case "guitar":
                 this.play(this.guitarFiles);
+                return true;
+
+            case "magic":
+                this.play(this.magicFiles);
                 return true;
 
             case "piano":
