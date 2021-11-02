@@ -11,7 +11,8 @@ class ChatBandManager {
         "Super Mario Bros 3/Bass 1 (Super Hacked).mp3",
         "Super Mario World/Boss Battle (Bass, Boosted).mp3",
         "Super Mario World/Invincible (Bass).mp3",
-        "ToeJam & Earl Panic on Funkotron/Rocket Rap (Bass, Amplified).mp3"
+        "ToeJam & Earl Panic on Funkotron/Rocket Rap (Bass, Amplified).mp3",
+        "Zelda 3/Bass.mp3"
     ];
 
     drumFiles = [
@@ -37,7 +38,11 @@ class ChatBandManager {
     pianoFiles = [
         "Chrono Trigger/Piano 1.mp3",
         "Pokémon Red/Celadon City (Piano).mp3",
-        "Pokémon Red/Pkmn Center (Piano).mp3"
+        "Pokémon Red/Pkmn Center (Piano).mp3",
+        "StarTropics/In Search of the Cubes (Piano).mp3",
+        "StarTropics/New Chapter (Piano).mp3",
+        "StarTropics/The Sub-C (Piano).mp3",
+        "StarTropics/Title (Piano).mp3"
     ];
 
     synthFiles = [
@@ -50,7 +55,8 @@ class ChatBandManager {
 
     trumpetFiles = [
         "Street Fighter 2/Trumpet 1.mp3",
-        "Super Mario World/Star Road (Trumpet).mp3"
+        "Super Mario World/Star Road (Trumpet).mp3",
+        "Zelda 3/Trumpet.mp3"
     ];
 
     violinFiles = [
