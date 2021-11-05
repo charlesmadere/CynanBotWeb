@@ -47,6 +47,7 @@ class ChatBandManager {
         "Batman - The Video Game/Plot Thickens (Guitar).mp3",
         "Battletoads/Guitar 1.mp3",
         "Blaster Master/Guitar 1.mp3",
+        "Contra/Bases I and II (Guitar).mp3",
         "Castlevania Dracula X/Guitar.mp3",
         "FF Mystic Quest/Guitar.mp3",
         "Mega Man 2/Guitar 1.mp3",
@@ -90,6 +91,7 @@ class ChatBandManager {
     ];
 
     synthFiles = [
+        "Contra/Title Screen (Synth).mp3",
         "Ghosts n Goblins/Synth 1.mp3",
         "Legend of Zelda, The/Synth 1.mp3",
         "Marble Madness/Synth 1.mp3",
