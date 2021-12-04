@@ -211,9 +211,9 @@ const websocketFunction = async () => {
         const jsonResponse = JSON.parse(event.data);
 
         if (chatBandManager.handleEvent(jsonResponse)) {
-            console.log("chatBandManager handled event: " + event);
+            console.log("chatBandManager handled event:", jsonResponse);
         } else {
-            console.log("unhandled event: " + event);
+            console.log("Unhandled event:", jsonResponse);
         }
     };
 }
