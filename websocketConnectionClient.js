@@ -197,30 +197,25 @@ class ChatBandManager {
 
 }
 
-
 const delay = ms => new Promise(res => setTimeout(res, ms));
 const chatBandManager = new ChatBandManager();
 
 const websocketFunction = async () => {
-    while (true) {
-        try {
-            var webSocket = new WebSocket("ws://192.168.1.2:8765");
+    var webSocket = new WebSocket("ws://192.168.1.2:8765");
 
-            webSocket.onmessage = function (event) {
-                const jsonResponse = JSON.parse(event.data);
-
-                if (chatBandManager.handleEvent(jsonResponse)) {
-                    console.log("chatBandManager handled event: " + event)
-                } else {
-                    console.log("unhandled event: " + event)
-                }
-            };
-        } catch (error) {
-            console.error(error);
-        }
-
-        await delay(30000);
+    webSocket.onerror = function (event) {
+        console.error("WebSocket error occurred:", event);
     }
+
+    webSocket.onmessage = function (event) {
+        const jsonResponse = JSON.parse(event.data);
+
+        if (chatBandManager.handleEvent(jsonResponse)) {
+            console.log("chatBandManager handled event: " + event);
+        } else {
+            console.log("unhandled event: " + event);
+        }
+    };
 }
 
 websocketFunction()
