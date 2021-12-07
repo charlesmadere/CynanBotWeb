@@ -83,8 +83,8 @@ class ChatBandManager {
         "Ninja Gaiden/Unbreakable Determination (Piano 1).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 2).mp3",
         "Ninja Gaiden II/Deep Within the Heart (Piano).mp3",
-        "Pokémon Red/Celadon City (Piano).mp3",
-        "Pokémon Red/Pkmn Center (Piano).mp3",
+        "Pokemon Red/Celadon City (Piano).mp3",
+        "Pokemon Red/Pkmn Center (Piano).mp3",
         "Secret of Mana/Piano.mp3",
         "StarTropics/In Search of the Cubes (Piano).mp3",
         "StarTropics/New Chapter (Piano).mp3",
@@ -101,7 +101,7 @@ class ChatBandManager {
         "Marble Madness/Synth 1.mp3",
         "Metroid/Mission Completed Successfully (Synth).mp3",
         "Ninja Gaiden/Unbreakable Determination (Synth).mp3",
-        "Pokémon Red/Lavender Town (Synth).mp3",
+        "Pokemon Red/Lavender Town (Synth).mp3",
         "Super Mario Bros 3/Synth 1.mp3"
     ];
 
