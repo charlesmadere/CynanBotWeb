@@ -5,20 +5,22 @@ class ChatBandManager {
     bassFiles = [
         "Actraiser/Bass.mp3",
         "Battletoads/Intro (Bass).mp3",
-        "Castlevania 3/Demon Seed (Bass, Clipped).mp3",
+        "Castlevania 3/Demon Seed (Bass).mp3",
         "Contra 3/Bass.mp3",
         "Earthbound/Bass.mp3",
         "F-Zero/Bass.mp3",
-        "Gimmick!/No Limits (Bass, Clipped).mp3",
+        "Gimmick!/No Limits (Bass).mp3",
         "Gimmick!/Untitled (Bass).mp3",
         "Journey to Silius/Bass.mp3",
         "Neo Turf Masters/Bass.mp3",
+        "Ninja Gaiden III/Closing Credits (Bass 1).mp3",
+        "Ninja Gaiden III/Closing Credits (Bass 2).mp3",
         "Secret of Mana/Bass.mp3",
         "Street Fighter 2/Bass 1.mp3",
         "Streets of Rage 2/Slow moon (Bass).mp3",
         "Streets of Rage 2/Wave 131 (Bass).mp3",
-        "Super Mario Bros 3/Bass 1 (Super Hacked).mp3",
-        "Super Mario World/Boss Battle (Bass, Boosted).mp3",
+        "Super Mario Bros 3/Bass 1.mp3",
+        "Super Mario World/Boss Battle (Bass).mp3",
         "Super Mario World/Invincible (Bass).mp3",
         "Tetris Attack/Bass.mp3",
         "Tetris Attack/Bass 2.mp3",
@@ -27,33 +29,35 @@ class ChatBandManager {
     ];
 
     drumFiles = [
-        "Batman - The Video Game/Streets of Gotham (Drums) (Clipped).mp3",
-        "Contra/Untitled (Drums, Clipped).mp3",
+        "Batman - The Video Game/Streets of Gotham (Drums).mp3",
+        "Contra/Untitled (Drums).mp3",
         "Mega Man X 2/Drums.mp3",
-        "Ninja Gaiden/Depth of Wickedness (Drums 2, Clipped).mp3",
+        "Ninja Gaiden/Depth of Wickedness (Drums 2).mp3",
         "Ninja Gaiden/Evading the Enemy (Drums).mp3",
         "Ninja Gaiden/Nowhere to Run (Drums 1).mp3",
         "Ninja Gaiden/Nowhere to Run (Drums 2).mp3",
         "Secret of Mana/Drums.mp3",
         "Secret of Mana/Drums 2.mp3",
+        "Shin Megami Tensei/Drums.mp3",
         "Streets of Rage 2/Dreamer (Drums).mp3",
         "Streets of Rage 2/Wave 131 (Drums).mp3",
         "Super Castlevania IV/Drums.mp3",
         "Super Mario Bros 3/Drums 1.mp3",
-        "Teenage Mutant Ninja Turtles/Introduction (Drums, Clipped).mp3"
+        "Super Star Soldier/Drums.mp3",
+        "Teenage Mutant Ninja Turtles/Introduction (Drums).mp3"
     ];
 
     guitarFiles = [
         "Batman - The Video Game/Plot Thickens (Guitar).mp3",
         "Battletoads/Guitar 1.mp3",
-        "Blaster Master/Guitar 1.mp3",
+        "Blaster Master/Area 1 (Guitar).mp3",
         "Contra/Bases I and II (Guitar).mp3",
         "Castlevania Dracula X/Guitar.mp3",
         "FF Mystic Quest/Guitar.mp3",
         "Mega Man 2/Guitar 1.mp3",
         "Mega Man 4/Skull Man v1 (Guitar).mp3",
         "Mega Man 4/Skull Man v2 (Guitar).mp3",
-        "Mega Man X/Guitar.mp3",
+        "Mega Man X/Guitar 1.mp3",
         "Mega Man X/Guitar 2.mp3",
         "Ninja Gaiden/SFX (Next Act) (Guitar).mp3",
         "Ninja Gaiden II/Domination of Darkness (Guitar 2).mp3",
@@ -75,7 +79,7 @@ class ChatBandManager {
 
     pianoFiles = [
         "Battle Garegga/Piano.mp3",
-        "Chrono Trigger/Piano 1.mp3",
+        "Chrono Trigger/Wind Scene (Piano).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 1).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 2).mp3",
         "Ninja Gaiden II/Deep Within the Heart (Piano).mp3",
@@ -92,7 +96,7 @@ class ChatBandManager {
 
     synthFiles = [
         "Contra/Title Screen (Synth).mp3",
-        "Ghosts n Goblins/Synth 1.mp3",
+        "Ghosts n Goblins/Stage 1 (Synth).mp3",
         "Legend of Zelda, The/Synth 1.mp3",
         "Marble Madness/Synth 1.mp3",
         "Metroid/Mission Completed Successfully (Synth).mp3",
@@ -102,8 +106,10 @@ class ChatBandManager {
     ];
 
     trumpetFiles = [
+        "Chrono Trigger/Gato's Song (Trumpet).mp3",
         "SimCity/Trumpet.mp3",
         "Street Fighter 2/Trumpet 1.mp3",
+        "Super Mario RPG/Trumpet.mp3",
         "Super Mario World/Star Road (Trumpet).mp3",
         "Terranigma/Trumpet.mp3",
         "Tetris Attack/Trumpet.mp3",
@@ -111,20 +117,23 @@ class ChatBandManager {
     ];
 
     violinFiles = [
-        "Duck Tales/Violin 1.mp3",
+        "Duck Tales/Moon Surface (The Moon) (Violin).mp3",
         "Ninja Gaiden/A Hero's End (Ending 1) (Violin).mp3",
         "Ninja Gaiden/For Your Love (Ending III) (Violin).mp3",
         "Ninja Gaiden/Vow of Revenge (Violin).mp3",
         "Ninja Gaiden II/Approaching Evil (Opening) (Violin 2).mp3",
         "Ninja Gaiden II/Deep Within the Heart (Violin 2).mp3",
+        "Ninja Gaiden III/Closing Credits (Violin 1).mp3",
+        "Ninja Gaiden III/Closing Credits (Violin 2).mp3",
         "Solstice/Violin 1.mp3"
     ];
 
     whistleFiles = [
-        "Chrono Trigger/Whistle 1.mp3",
-        "Kirby's Adventure/Flute.mp3",
-        "Neutopia II/Flute.mp3",
-        "Super Mario Bros 3/Whistle 1.wav",
+        "Chrono Trigger/Frog's Theme (Whistle).mp3",
+        "Kirby's Adventure/Whistle.mp3",
+        "Neutopia II/Whistle.mp3",
+        "Super Mario Bros 3/Warp Whistle.mp3",
+        "Super Mario RPG/Flute.mp3",
         "Super Mario World/Staff Roll (Whistle).mp3"
     ];
 
