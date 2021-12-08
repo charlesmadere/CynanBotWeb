@@ -12,6 +12,7 @@ class ChatBandManager {
         "Gimmick!/No Limits (Bass).mp3",
         "Gimmick!/Untitled (Bass).mp3",
         "Journey to Silius/Bass.mp3",
+        "Legend of Zelda, The - A Link to the Past/Bass.mp3",
         "Neo Turf Masters/Bass.mp3",
         "Ninja Gaiden III/Closing Credits (Bass 1).mp3",
         "Ninja Gaiden III/Closing Credits (Bass 2).mp3",
@@ -24,8 +25,7 @@ class ChatBandManager {
         "Super Mario World/Invincible (Bass).mp3",
         "Tetris Attack/Bass.mp3",
         "Tetris Attack/Bass 2.mp3",
-        "ToeJam & Earl Panic on Funkotron/Rocket Rap (Bass, Amplified).mp3",
-        "Zelda 3/Bass.mp3"
+        "ToeJam & Earl Panic on Funkotron/Rocket Rap (Bass, Amplified).mp3"
     ];
 
     drumFiles = [
@@ -80,9 +80,11 @@ class ChatBandManager {
     pianoFiles = [
         "Battle Garegga/Piano.mp3",
         "Chrono Trigger/Wind Scene (Piano).mp3",
+        "Legend of Zelda, The (Misc)/Lost Woods (Piano).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 1).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 2).mp3",
         "Ninja Gaiden II/Deep Within the Heart (Piano).mp3",
+        "Ninja Gaiden III/Stage 2-1 The Desert (Piano).mp3",
         "Pokemon Red/Celadon City (Piano).mp3",
         "Pokemon Red/Pkmn Center (Piano).mp3",
         "Secret of Mana/Piano.mp3",
@@ -91,7 +93,9 @@ class ChatBandManager {
         "StarTropics/Overworld (Piano 1).mp3",
         "StarTropics/Overworld (Piano 2).mp3",
         "StarTropics/The Sub-C (Piano).mp3",
-        "StarTropics/Title (Piano).mp3"
+        "StarTropics/Title (Piano).mp3",
+        "Super Mario Bros 2/Track 1 (Piano).mp3",
+        "Super Mario Bros 2/Track 2 (Piano).mp3"
     ];
 
     synthFiles = [
@@ -107,13 +111,13 @@ class ChatBandManager {
 
     trumpetFiles = [
         "Chrono Trigger/Gato's Song (Trumpet).mp3",
+        "Legend of Zelda, The - A Link to the Past/Trumpet.mp3",
         "SimCity/Trumpet.mp3",
         "Street Fighter 2/Trumpet 1.mp3",
         "Super Mario RPG/Trumpet.mp3",
         "Super Mario World/Star Road (Trumpet).mp3",
         "Terranigma/Trumpet.mp3",
-        "Tetris Attack/Trumpet.mp3",
-        "Zelda 3/Trumpet.mp3"
+        "Tetris Attack/Trumpet.mp3"
     ];
 
     violinFiles = [
