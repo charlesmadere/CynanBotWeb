@@ -5,6 +5,7 @@ class ChatBandManager {
     bassFiles = [
         "Actraiser/Bass.mp3",
         "Battletoads/Intro (Bass).mp3",
+        "Castlevania/Vampire Killer (Bass).mp3",
         "Castlevania 3/Demon Seed (Bass).mp3",
         "Contra 3/Bass.mp3",
         "Earthbound/Bass.mp3",
@@ -51,8 +52,9 @@ class ChatBandManager {
         "Batman - The Video Game/Plot Thickens (Guitar).mp3",
         "Battletoads/Guitar 1.mp3",
         "Blaster Master/Area 1 (Guitar).mp3",
-        "Contra/Bases I and II (Guitar).mp3",
+        "Castlevania 3/Prayer (Opening) (Guitar).mp3",
         "Castlevania Dracula X/Guitar.mp3",
+        "Contra/Bases I and II (Guitar).mp3",
         "FF Mystic Quest/Guitar.mp3",
         "Mega Man 2/Guitar 1.mp3",
         "Mega Man 4/Skull Man v1 (Guitar).mp3",
