@@ -82,7 +82,6 @@ class ChatBandManager {
     pianoFiles = [
         "Battle Garegga/Piano.mp3",
         "Chrono Trigger/Wind Scene (Piano).mp3",
-        "Legend of Zelda, The (Misc)/Lost Woods (Piano).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 1).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 2).mp3",
         "Ninja Gaiden II/Deep Within the Heart (Piano).mp3",
@@ -104,6 +103,7 @@ class ChatBandManager {
         "Contra/Title Screen (Synth).mp3",
         "Ghosts n Goblins/Stage 1 (Synth).mp3",
         "Legend of Zelda, The/Synth 1.mp3",
+        "Legend of Zelda, The (Misc)/Lost Woods (Synth).mp3",
         "Marble Madness/Synth 1.mp3",
         "Metroid/Mission Completed Successfully (Synth).mp3",
         "Ninja Gaiden/Unbreakable Determination (Synth).mp3",
