@@ -18,6 +18,7 @@ class ChatBandManager {
         "Ninja Gaiden III/Closing Credits (Bass 1).mp3",
         "Ninja Gaiden III/Closing Credits (Bass 2).mp3",
         "Secret of Mana/Bass.mp3",
+        "Sonic 2/Chemical Plant Zone (Bass).mp3",
         "Sonic 2/Mystic Cave Zone (Bass 1).mp3",
         "Sonic 2/Mystic Cave Zone (Bass 2, Boosted Bass).mp3",
         "Sonic and Knuckles/Sandopolis Zone Act 1 (Bass 1).mp3",
@@ -45,6 +46,7 @@ class ChatBandManager {
         "Secret of Mana/Drums.mp3",
         "Secret of Mana/Drums 2.mp3",
         "Shin Megami Tensei/Drums.mp3",
+        "Sonic 2/Opening Theme (Drums).mp3",
         "Streets of Rage 2/Dreamer (Drums).mp3",
         "Streets of Rage 2/Wave 131 (Drums).mp3",
         "Super Castlevania IV/Drums.mp3",
@@ -96,6 +98,7 @@ class ChatBandManager {
         "Pokemon Red/Celadon City (Piano).mp3",
         "Pokemon Red/Pkmn Center (Piano).mp3",
         "Secret of Mana/Piano.mp3",
+        "Sonic/Star Light Zone (Piano).mp3",
         "Sonic and Knuckles/Knuckles Theme (Piano).mp3",
         "Sonic and Knuckles/Special Stage (Blue Spheres) (Bass).mp3",
         "StarTropics/In Search of the Cubes (Piano).mp3",
@@ -117,6 +120,7 @@ class ChatBandManager {
         "Metroid/Mission Completed Successfully (Synth).mp3",
         "Ninja Gaiden/Unbreakable Determination (Synth).mp3",
         "Pokemon Red/Lavender Town (Synth).mp3",
+        "Sonic 2/Robotnik (Synth).mp3",
         "Super Mario Bros 3/Synth 1.mp3"
     ];
 
@@ -124,6 +128,7 @@ class ChatBandManager {
         "Chrono Trigger/Gato's Song (Trumpet).mp3",
         "Legend of Zelda, The - A Link to the Past/Trumpet.mp3",
         "SimCity/Trumpet.mp3",
+        "Sonic 2/Robotnik (Trumpet).mp3",
         "Street Fighter 2/Trumpet 1.mp3",
         "Super Mario RPG/Trumpet.mp3",
         "Super Mario World/Star Road (Trumpet).mp3",
@@ -147,6 +152,7 @@ class ChatBandManager {
         "Chrono Trigger/Frog's Theme (Whistle).mp3",
         "Kirby's Adventure/Whistle.mp3",
         "Neutopia II/Whistle.mp3",
+        "Sonic 2/Aquatic Ruin Zone (Whistle).mp3",
         "Sonic and Knuckles/Flying Battery Zone Act 1 (Whistle).mp3",
         "Super Mario Bros 3/Warp Whistle.mp3",
         "Super Mario RPG/Flute.mp3",
