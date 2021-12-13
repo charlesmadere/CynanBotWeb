@@ -57,7 +57,7 @@ class ChatBandManager {
 
     guitarFiles = [
         "Batman - The Video Game/Plot Thickens (Guitar).mp3",
-        "Battletoads/Guitar 1.mp3",
+        "Battletoads/Intro (Guitar).mp3",
         "Blaster Master/Area 1 (Guitar).mp3",
         "Castlevania 3/Prayer (Opening) (Guitar).mp3",
         "Castlevania Dracula X/Guitar.mp3",
