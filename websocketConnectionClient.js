@@ -34,7 +34,7 @@ class ChatBandManager {
         "Super Mario World/Invincible (Bass).mp3",
         "Tetris Attack/Bass.mp3",
         "Tetris Attack/Bass 2.mp3",
-        "ToeJam & Earl Panic on Funkotron/Rocket Rap (Bass, Amplified).mp3"
+        "ToeJam & Earl Panic on Funkotron/Rocket Rap (Bass).mp3"
     ];
 
     drumFiles = [
