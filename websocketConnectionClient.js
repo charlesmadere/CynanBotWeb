@@ -16,6 +16,8 @@ class ChatBandManager {
         "Gimmick!/Untitled (Bass).mp3",
         "Journey to Silius/Bass.mp3",
         "Legend of Zelda, The - A Link to the Past/Bass.mp3",
+        "Metroid/Brinstar (Bass 1).mp3",
+        "Metroid/Brinstar (Bass 2).mp3",
         "Neo Turf Masters/Bass.mp3",
         "Ninja Gaiden III/Closing Credits (Bass 1).mp3",
         "Ninja Gaiden III/Closing Credits (Bass 2).mp3",
@@ -100,6 +102,8 @@ class ChatBandManager {
         "Battle Garegga/Piano.mp3",
         "Chrono Trigger/Wind Scene (Piano).mp3",
         "Earthbound/Enjoy Your Stay (Piano).mp3",
+        "Metroid/Enter Samus (Synth).mp3",
+        "Metroid/Intro (Piano).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 1).mp3",
         "Ninja Gaiden/Unbreakable Determination (Piano 2).mp3",
         "Ninja Gaiden II/Deep Within the Heart (Piano).mp3",
@@ -122,6 +126,7 @@ class ChatBandManager {
 
     synthFiles = [
         "Contra/Title Screen (Synth).mp3",
+        "Final Fantasy VI/Synth.mp3",
         "Ghosts n Goblins/Stage 1 (Synth).mp3",
         "Legend of Zelda, The/Synth 1.mp3",
         "Legend of Zelda, The (Misc)/Lost Woods (Synth).mp3",
@@ -136,7 +141,10 @@ class ChatBandManager {
 
     trumpetFiles = [
         "Chrono Trigger/Gato's Song (Trumpet).mp3",
+        "Final Fantasy VI/Tuba 1.mp3",
+        "Final Fantasy VI/Tuba 2.mp3",
         "Legend of Zelda, The - A Link to the Past/Trumpet.mp3",
+        "Secret of Mana/Tuba.mp3",
         "SimCity/Trumpet.mp3",
         "Sonic 2/Robotnik (Trumpet).mp3",
         "Street Fighter 2/Trumpet 1.mp3",
