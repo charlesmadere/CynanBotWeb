@@ -101,21 +101,23 @@ class ChannelPredictionClient {
             return false;
         }
 
-        switch (jsonResponse.predictionType) {
+        eventData = jsonResponse.eventData;
+
+        switch (eventData.predictionType) {
             case "prediction_begin":
-                this.#handlePredictionBegin(jsonResponse);
+                this.#handlePredictionBegin(eventData);
                 return true;
 
             case "prediction_end":
-                this.#handlePredictionEnd(jsonResponse);
+                this.#handlePredictionEnd(eventData);
                 return true;
 
             case "prediction_lock":
-                this.#handlePredictionLock(jsonResponse);
+                this.#handlePredictionLock(eventData);
                 return true;
 
             case "prediction_progress":
-                this.#handlePredictionProgress(jsonResponse);
+                this.#handlePredictionProgress(eventData);
                 return true;
 
             default:
@@ -123,25 +125,25 @@ class ChannelPredictionClient {
         }
     }
 
-    #handlePredictionBegin(jsonResponse) {
+    #handlePredictionBegin(eventData) {
         this.ongoingPrediction = new PredictionData(
-            jsonResponse.eventId,
-            jsonResponse.title
+            eventData.eventId,
+            eventData.title
         );
 
-        this.ongoingPrediction.setPoints(jsonResponse.outcomes);
+        this.ongoingPrediction.setPoints(eventData.outcomes);
     }
 
-    #handlePredictionEnd(jsonResponse) {
+    #handlePredictionEnd(eventData) {
         this.ongoingPrediction = null;
     }
 
-    #handlePredictionLock(jsonResponse) {
+    #handlePredictionLock(eventData) {
         // intentionally empty
     }
 
-    #handlePredictionProgress(jsonResponse) {
-        this.ongoingPrediction.setPoints(jsonResponse.outcomes);
+    #handlePredictionProgress(eventData) {
+        this.ongoingPrediction.setPoints(eventData.outcomes);
     }
 
 }
