@@ -1,3 +1,9 @@
+function randomInt() {
+    let max = 100;
+    let min = 0;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 class OutcomeColor {
 
     #blue = null;
@@ -80,7 +86,7 @@ class PredictionData {
             "options": {
                 "animation": {
                     "duration": 1000,
-                    "easing": "easeInOutBounce"
+                    "easing": "easeInOutBack"
                 },
                 "borderColor": "rgba(0, 0, 0, 0)",
                 "events": [],
@@ -107,8 +113,7 @@ class PredictionData {
                 "datasets": [{
                     "data": data,
                     "backgroundColor": backgroundColor
-                }],
-                "labels": labels
+                }]
             }
         };
     }
