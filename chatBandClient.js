@@ -264,6 +264,6 @@ const websocketFunction = async () => {
             console.log("Unhandled event:", jsonResponse);
         }
     };
-}
+};
 
-websocketFunction()
+websocketFunction();
