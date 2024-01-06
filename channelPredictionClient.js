@@ -7,7 +7,7 @@ class OutcomeColor {
     }
 
     toRgbString() {
-        return "rgb(" + red + ", " + green + ", " + blue + ")";
+        return "rgb(" + this.red + ", " + this.green + ", " + this.blue + ")";
     }
 
 }
@@ -62,11 +62,11 @@ class PredictionData {
     toChartDataStructure() {
         const outcomes = [];
 
-        this.outcomeIdToOutcome.forEach(value, key, _ => {
+        this.outcomeIdToOutcome.forEach((value, key, map) => {
             outcomes.push(value);
         });
 
-        outcomes.sort(a, b => {
+        outcomes.sort((a, b) => {
             return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
         });
 
