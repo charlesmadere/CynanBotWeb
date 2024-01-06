@@ -164,11 +164,15 @@ function updateChart(ongoingPrediction) {
             chart.destroy();
             chart = null;
         }
-    } else if (chart == null) {
-        chart = new Chart(ctx);
     } else {
-        chart.data.datasets = ongoingPrediction.data.datasets;
-        chart.update();
+        const chartDataStructure = ongoingPrediction.toChartDataStructure()
+
+        if (chart == null) {
+            chart = new Chart(ctx, chartDataStructure);
+        } else {
+            chart.data.datasets = chartDataStructure.data.datasets;
+            chart.update();
+        }
     }
 }
 
