@@ -1,4 +1,18 @@
-class Outcome {
+class OutcomeColor {
+
+    constructor(color) {
+        this.red = color.red;
+        this.green = color.green;
+        this.blue = color.blue;
+    }
+
+    toRgbString() {
+        return "rgb(" + red + ", " + green + ", " + blue + ")";
+    }
+
+}
+
+class PredictionOutcome {
 
     constructor(color, outcomeId, title) {
         this.color = color;
@@ -27,8 +41,8 @@ class PredictionData {
     setPoints(outcomes) {
         outcomes.forEach(outcome => {
             if (!this.outcomeIdToOutcome.has(outcome.outcomeId)) {
-                this.outcomeIdToOutcome[outcome.outcomeId] = new Outcome(
-                    outcome.color,
+                this.outcomeIdToOutcome[outcome.outcomeId] = new PredictionOutcome(
+                    new OutcomeColor(outcome.color),
                     outcome.outcomeId,
                     outcome.title
                 );
