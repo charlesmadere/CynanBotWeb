@@ -1,6 +1,47 @@
+class Outcome {
+
+    constructor(color, outcomeId, title) {
+        this.color = color;
+        this.outcomeId = outcomeId;
+        this.title = title;
+        this.channelPoints = 0;
+        this.users = 0;
+    }
+
+    update(channelPoints, users) {
+        this.channelPoints = channelPoints;
+        this.users = users;
+    }
+
+}
+
+class PredictionData {
+
+    outcomeIdToOutcome = new Map();
+
+    constructor(eventId, title) {
+        this.eventId = eventId;
+        this.title = title;
+    }
+
+    setPoints(outcomes) {
+        outcomes.forEach(outcome => {
+            if (!this.outcomeIdToOutcome.has(outcome.outcomeId)) {
+                this.outcomeIdToOutcome[outcome.outcomeId] = new Outcome(
+                    outcome.color,
+                    outcome.outcomeId,
+                    outcome.title
+                );
+            }
+
+            this.outcomeIdToOutcome[outcome.outcomeId].update(outcome.channelPoints, outcome.users)
+        });
+    }
+}
+
 class ChannelPredictionClient {
 
-    #ongoingPrediction = null;
+    ongoingPrediction = null;
 
     constructor() {
         // intentionally empty
@@ -34,11 +75,16 @@ class ChannelPredictionClient {
     }
 
     #handlePredictionBegin(jsonResponse) {
-        // TODO
+        this.ongoingPrediction = new PredictionData(
+            jsonResponse.eventId,
+            jsonResponse.title
+        );
+
+        this.ongoingPrediction.setPoints(jsonResponse.outcomes);
     }
 
     #handlePredictionEnd(jsonResponse) {
-        this.#ongoingPrediction = null;
+        this.ongoingPrediction = null;
     }
 
     #handlePredictionLock(jsonResponse) {
@@ -46,9 +92,18 @@ class ChannelPredictionClient {
     }
 
     #handlePredictionProgress(jsonResponse) {
-        // TODO
+        this.ongoingPrediction.setPoints(jsonResponse.outcomes);
     }
 
+}
+
+function updateChart(ongoingPrediction) {
+    if (ongoingPrediction == null) {
+        // clear the chart
+        return;
+    }
+
+    // update chart properties
 }
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -66,10 +121,11 @@ const websocketFunction = async () => {
 
         if (channelPredictionClient.handleEvent(jsonResponse)) {
             console.log("channelPredictionClient handled event:", jsonResponse);
+            updateChart(channelPredictionClient.ongoingPrediction);
         } else {
             console.log("Unhandled event:", jsonResponse);
         }
     };
-}
+};
 
-websocketFunction()
+websocketFunction();
