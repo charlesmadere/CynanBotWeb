@@ -99,11 +99,11 @@ class ChannelPredictionClient {
 
 function updateChart(ongoingPrediction) {
     if (ongoingPrediction == null) {
-        // clear the chart
+        // TODO: clear the chart
         return;
     }
 
-    // update chart properties
+    // TODO: update chart properties
 }
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
