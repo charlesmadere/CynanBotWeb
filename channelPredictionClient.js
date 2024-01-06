@@ -51,6 +51,24 @@ class PredictionData {
             this.outcomeIdToOutcome[outcome.outcomeId].update(outcome.channelPoints, outcome.users)
         });
     }
+
+    toChartDataStructure() {
+        const data = [];
+        const backgroundColor = [];
+
+        this.outcomeIdToOutcome.values.forEach(outcome => {
+            data.push(outcome.channelPoints);
+            backgroundColor.push(outcome.color.toRgbString());
+        });
+
+        return {
+            "datasets": [{
+                "data": data,
+                "backgroundColor": backgroundColor
+            }]
+        };
+    }
+
 }
 
 class ChannelPredictionClient {
