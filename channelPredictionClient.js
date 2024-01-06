@@ -72,10 +72,16 @@ class PredictionData {
         });
 
         return {
-            "datasets": [{
-                "data": data,
-                "backgroundColor": backgroundColor
-            }]
+            "type": "doughnut",
+            "options": {
+                "animation": true
+            },
+            "data": {
+                "datasets": [{
+                    "data": data,
+                    "backgroundColor": backgroundColor
+                }]
+            }
         };
     }
 
@@ -139,17 +145,21 @@ class ChannelPredictionClient {
 
 }
 
-function updateChart(ongoingPrediction) {
-    if (ongoingPrediction == null) {
-        // TODO: clear the chart
-        return;
-    }
-
-    // TODO: update chart properties
-}
-
 const delay = ms => new Promise(res => setTimeout(res, ms));
 const channelPredictionClient = new ChannelPredictionClient();
+const ctx = document.getElementById("channelPredictionChart");
+var chart = null;
+
+function updateChart(ongoingPrediction) {
+    if (ongoingPrediction == null) {
+        // clear the chart
+        chart = null;
+    } else if (chart == null) {
+        chart = new Chart(ctx, ongoingPrediction);
+    } else {
+        chart.update(ongoingPrediction);
+    }
+}
 
 const websocketFunction = async () => {
     var webSocket = new WebSocket("ws://localhost:8765");
