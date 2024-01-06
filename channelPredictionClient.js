@@ -1,9 +1,9 @@
 class OutcomeColor {
 
-    constructor(color) {
-        this.red = color.red;
-        this.green = color.green;
-        this.blue = color.blue;
+    constructor(red, green, blue) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
     }
 
     toRgbString() {
@@ -41,21 +41,28 @@ class PredictionData {
     setPoints(outcomes) {
         outcomes.forEach(outcome => {
             if (!this.outcomeIdToOutcome.has(outcome.outcomeId)) {
-                this.outcomeIdToOutcome[outcome.outcomeId] = new PredictionOutcome(
-                    new OutcomeColor(outcome.color),
+                this.outcomeIdToOutcome.set(
                     outcome.outcomeId,
-                    outcome.title
+                    new PredictionOutcome(
+                        new OutcomeColor(
+                            outcome.color.red,
+                            outcome.color.green,
+                            outcome.color.blue
+                        ),
+                        outcome.outcomeId,
+                        outcome.title
+                    )
                 );
             }
 
-            this.outcomeIdToOutcome[outcome.outcomeId].update(outcome.channelPoints, outcome.users)
+            this.outcomeIdToOutcome.get(outcome.outcomeId).update(outcome.channelPoints, outcome.users)
         });
     }
 
     toChartDataStructure() {
         const outcomes = [];
 
-        this.outcomeIdToOutcome.forEach(value, key, map => {
+        this.outcomeIdToOutcome.forEach(value, key, _ => {
             outcomes.push(value);
         });
 
