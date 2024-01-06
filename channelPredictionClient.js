@@ -101,7 +101,7 @@ class ChannelPredictionClient {
             return false;
         }
 
-        eventData = jsonResponse.eventData;
+        const eventData = jsonResponse.eventData;
 
         switch (eventData.predictionType) {
             case "prediction_begin":
