@@ -53,10 +53,20 @@ class PredictionData {
     }
 
     toChartDataStructure() {
+        const outcomes = [];
+
+        this.outcomeIdToOutcome.values.forEach(outcome => {
+            outcomes.push(outcome);
+        });
+
+        outcomes.sort(a, b => {
+            return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+        });
+
         const data = [];
         const backgroundColor = [];
 
-        this.outcomeIdToOutcome.values.forEach(outcome => {
+        outcomes.forEach(outcome => {
             data.push(outcome.channelPoints);
             backgroundColor.push(outcome.color.toRgbString());
         });
