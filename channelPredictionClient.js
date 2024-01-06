@@ -126,12 +126,13 @@ class ChannelPredictionClient {
     }
 
     #handlePredictionBegin(eventData) {
-        this.ongoingPrediction = new PredictionData(
+        const ongoingPrediction = new PredictionData(
             eventData.eventId,
             eventData.title
         );
 
-        this.ongoingPrediction.setPoints(eventData.outcomes);
+        ongoingPrediction.setPoints(eventData.outcomes);
+        this.ongoingPrediction = ongoingPrediction;
     }
 
     #handlePredictionEnd(eventData) {
@@ -143,7 +144,11 @@ class ChannelPredictionClient {
     }
 
     #handlePredictionProgress(eventData) {
-        this.ongoingPrediction.setPoints(eventData.outcomes);
+        const ongoingPrediction = this.ongoingPrediction;
+
+        if (ongoingPrediction != null) {
+            ongoingPrediction.setPoints(eventData.outcomes);
+        }
     }
 
 }
