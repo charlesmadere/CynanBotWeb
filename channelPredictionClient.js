@@ -72,10 +72,12 @@ class PredictionData {
 
         const data = [];
         const backgroundColor = [];
+        const labels = [];
 
         outcomes.forEach(outcome => {
             data.push(outcome.channelPoints);
             backgroundColor.push(outcome.color.toRgbString());
+            labels.push(outcome.title);
         });
 
         return {
@@ -110,7 +112,8 @@ class PredictionData {
                 "datasets": [{
                     "data": data,
                     "backgroundColor": backgroundColor
-                }]
+                }],
+                "labels": labels
             }
         };
     }
