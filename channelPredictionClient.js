@@ -1,16 +1,52 @@
 class ChannelPredictionClient {
 
+    #ongoingPrediction = null;
+
     constructor() {
         // intentionally empty
     }
 
     handleEvent(jsonResponse) {
-        if (jsonResponse.eventType !== 'channelPrediction') {
+        if (jsonResponse.eventType !== "channelPrediction") {
             return false;
         }
 
+        switch (jsonResponse.predictionType) {
+            case "prediction_begin":
+                this.#handlePredictionBegin(jsonResponse);
+                return true;
+
+            case "prediction_end":
+                this.#handlePredictionEnd(jsonResponse);
+                return true;
+
+            case "prediction_lock":
+                this.#handlePredictionLock(jsonResponse);
+                return true;
+
+            case "prediction_progress":
+                this.#handlePredictionProgress(jsonResponse);
+                return true;
+
+            default:
+                return false;
+        }
+    }
+
+    #handlePredictionBegin(jsonResponse) {
         // TODO
-        return false;
+    }
+
+    #handlePredictionEnd(jsonResponse) {
+        this.#ongoingPrediction = null;
+    }
+
+    #handlePredictionLock(jsonResponse) {
+        // intentionally empty
+    }
+
+    #handlePredictionProgress(jsonResponse) {
+        // TODO
     }
 
 }
