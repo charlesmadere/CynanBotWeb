@@ -1,4 +1,4 @@
-class ChatBandManager {
+class ChatBandClient {
 
     baseDir = "resources";
 
@@ -246,7 +246,7 @@ class ChatBandManager {
 }
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
-const chatBandManager = new ChatBandManager();
+const chatBandClient = new ChatBandClient();
 
 const websocketFunction = async () => {
     var webSocket = new WebSocket("ws://192.168.1.2:8765");
@@ -258,8 +258,8 @@ const websocketFunction = async () => {
     webSocket.onmessage = function (event) {
         const jsonResponse = JSON.parse(event.data);
 
-        if (chatBandManager.handleEvent(jsonResponse)) {
-            console.log("chatBandManager handled event:", jsonResponse);
+        if (chatBandClient.handleEvent(jsonResponse)) {
+            console.log("chatBandClient handled event:", jsonResponse);
         } else {
             console.log("Unhandled event:", jsonResponse);
         }
