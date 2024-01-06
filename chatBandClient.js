@@ -249,7 +249,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 const chatBandClient = new ChatBandClient();
 
 const websocketFunction = async () => {
-    var webSocket = new WebSocket("ws://192.168.1.2:8765");
+    var webSocket = new WebSocket("ws://localhost:8765");
 
     webSocket.onerror = function (event) {
         console.error("WebSocket error occurred:", event);
