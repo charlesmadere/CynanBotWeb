@@ -55,7 +55,7 @@ class PredictionData {
     toChartDataStructure() {
         const outcomes = [];
 
-        this.outcomeIdToOutcome.values.forEach(outcome => {
+        this.outcomeIdToOutcome.values().forEach(outcome => {
             outcomes.push(outcome);
         });
 
