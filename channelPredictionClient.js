@@ -74,7 +74,8 @@ class PredictionData {
         return {
             "type": "doughnut",
             "options": {
-                "animation": true
+                "animation": true,
+                "responsive": true
             },
             "data": {
                 "datasets": [{
@@ -152,12 +153,15 @@ var chart = null;
 
 function updateChart(ongoingPrediction) {
     if (ongoingPrediction == null) {
-        // clear the chart
-        chart = null;
+        if (chart != null) {
+            chart.destroy();
+            chart = null;
+        }
     } else if (chart == null) {
-        chart = new Chart(ctx, ongoingPrediction);
+        chart = new Chart(ctx);
     } else {
-        chart.update(ongoingPrediction);
+        chart.data.datasets = ongoingPrediction.data.datasets;
+        chart.update();
     }
 }
 
