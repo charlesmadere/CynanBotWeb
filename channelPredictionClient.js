@@ -81,7 +81,29 @@ class PredictionData {
         return {
             "type": "doughnut",
             "options": {
-                "animation": true,
+                "animation": {
+                    "duration": 3000,
+                    "easing": "easeInOutBounce"
+                },
+                "borderColor": "rgba(0, 0, 0, 0)",
+                "events": [],
+                "layout": {
+                    "autoPadding": true
+                },
+                "legend": {
+                    "display": false
+                },
+                "plugins": {
+                    "subtitle": {
+                        "display": false
+                    },
+                    "title": {
+                        "display": false
+                    },
+                    "tooltip": {
+                        "enabled": false
+                    }
+                },
                 "responsive": true
             },
             "data": {
