@@ -1,13 +1,17 @@
 class OutcomeColor {
 
+    #blue = null;
+    #green = null;
+    #red = null;
+
     constructor(red, green, blue) {
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
+        this.#red = red;
+        this.#green = green;
+        this.#blue = blue;
     }
 
-    toRgbString() {
-        return "rgb(" + this.red + ", " + this.green + ", " + this.blue + ")";
+    getRgbString() {
+        return "rgb(" + this.#red + ", " + this.#green + ", " + this.#blue + ")";
     }
 
 }
@@ -31,7 +35,7 @@ class PredictionOutcome {
 
 class PredictionData {
 
-    outcomeIdToOutcome = new Map();
+    #outcomeIdToOutcome = new Map();
 
     constructor(eventId, title) {
         this.eventId = eventId;
@@ -40,8 +44,8 @@ class PredictionData {
 
     setPoints(outcomes) {
         outcomes.forEach(outcome => {
-            if (!this.outcomeIdToOutcome.has(outcome.outcomeId)) {
-                this.outcomeIdToOutcome.set(
+            if (!this.#outcomeIdToOutcome.has(outcome.outcomeId)) {
+                this.#outcomeIdToOutcome.set(
                     outcome.outcomeId,
                     new PredictionOutcome(
                         new OutcomeColor(
@@ -55,28 +59,19 @@ class PredictionData {
                 );
             }
 
-            this.outcomeIdToOutcome.get(outcome.outcomeId).update(outcome.channelPoints, outcome.users)
+            this.#outcomeIdToOutcome.get(outcome.outcomeId).update(outcome.channelPoints, outcome.users)
         });
     }
 
-    toChartDataStructure() {
-        const outcomes = [];
-
-        this.outcomeIdToOutcome.forEach((value, key, map) => {
-            outcomes.push(value);
-        });
-
-        outcomes.sort((a, b) => {
-            return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
-        });
-
+    getFullChartDataStructure() {
+        const outcomes = this.#getSortedOutcomes()
         const data = [];
         const backgroundColor = [];
         const labels = [];
 
         outcomes.forEach(outcome => {
             data.push(outcome.channelPoints);
-            backgroundColor.push(outcome.color.toRgbString());
+            backgroundColor.push(outcome.color.getRgbString());
             labels.push(outcome.title);
         });
 
@@ -84,7 +79,7 @@ class PredictionData {
             "type": "doughnut",
             "options": {
                 "animation": {
-                    "duration": 3000,
+                    "duration": 1000,
                     "easing": "easeInOutBounce"
                 },
                 "borderColor": "rgba(0, 0, 0, 0)",
@@ -116,6 +111,31 @@ class PredictionData {
                 "labels": labels
             }
         };
+    }
+
+    #getSortedOutcomes() {
+        const outcomes = [];
+
+        this.#outcomeIdToOutcome.forEach((value, key, map) => {
+            outcomes.push(value);
+        });
+
+        outcomes.sort((a, b) => {
+            return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+        });
+
+        return outcomes
+    }
+
+    getUpdatedChartDataStructure() {
+        const outcomes = this.#getSortedOutcomes()
+        const updatedData = [];
+
+        outcomes.forEach(outcome => {
+            updatedData.push(outcome.channelPoints);
+        });
+
+        return updatedData;
     }
 
 }
@@ -196,15 +216,17 @@ function updateChart(ongoingPrediction) {
             chart.destroy();
             chart = null;
         }
+    } else if (chart == null) {
+        const fullDataStructure = ongoingPrediction.getFullChartDataStructure()
+        chart = new Chart(ctx, fullDataStructure);
     } else {
-        const chartDataStructure = ongoingPrediction.toChartDataStructure()
+        const updatedDataStructure = ongoingPrediction.getUpdatedChartDataStructure()
 
-        if (chart == null) {
-            chart = new Chart(ctx, chartDataStructure);
-        } else {
-            chart.data.datasets = chartDataStructure.data.datasets;
-            chart.update();
-        }
+        updatedDataStructure.forEach((value, index) => {
+            chart.data.datasets[0].data[index] = value;
+        });
+
+        chart.update();
     }
 }
 
