@@ -1,8 +1,8 @@
 class ChatBandClient {
 
-    baseDir = "resources";
+    #baseDir = "resources";
 
-    bassFiles = [
+    #bassFiles = [
         "Actraiser/Bass.mp3",
         "Battletoads/Intro (Bass).mp3",
         "Castlevania/Vampire Killer (Bass).mp3",
@@ -39,7 +39,7 @@ class ChatBandClient {
         "ToeJam & Earl Panic on Funkotron/Rocket Rap (Bass).mp3"
     ];
 
-    drumFiles = [
+    #drumFiles = [
         "Batman - The Video Game/Streets of Gotham (Drums).mp3",
         "Contra/Untitled (Drums).mp3",
         "Earthbound/Title Screen (Drums).mp3",
@@ -60,7 +60,7 @@ class ChatBandClient {
         "Teenage Mutant Ninja Turtles/Introduction (Drums).mp3"
     ];
 
-    guitarFiles = [
+    #guitarFiles = [
         "Batman - The Video Game/Plot Thickens (Guitar).mp3",
         "Battletoads/Intro (Guitar).mp3",
         "Blaster Master/Area 1 (Guitar).mp3",
@@ -92,13 +92,13 @@ class ChatBandClient {
         "Yoshi's Island/Guitar.mp3"
     ];
 
-    magicFiles = [
+    #magicFiles = [
         "Ninja Gaiden II/Thunder.mp3",
         "StarTropics/Track 34 (Magic).mp3",
         "Super Mario World/Fireballs.mp3"
     ];
 
-    pianoFiles = [
+    #pianoFiles = [
         "Battle Garegga/Piano.mp3",
         "Chrono Trigger/Wind Scene (Piano).mp3",
         "Earthbound/Enjoy Your Stay (Piano).mp3",
@@ -124,7 +124,7 @@ class ChatBandClient {
         "Super Mario Bros 2/Track 2 (Piano).mp3"
     ];
 
-    synthFiles = [
+    #synthFiles = [
         "Contra/Title Screen (Synth).mp3",
         "Final Fantasy VI/Synth.mp3",
         "Ghosts n Goblins/Stage 1 (Synth).mp3",
@@ -139,7 +139,7 @@ class ChatBandClient {
         "Super Mario Bros 3/Synth 1.mp3"
     ];
 
-    trumpetFiles = [
+    #trumpetFiles = [
         "Chrono Trigger/Gato's Song (Trumpet).mp3",
         "Final Fantasy VI/Tuba 1.mp3",
         "Final Fantasy VI/Tuba 2.mp3",
@@ -154,7 +154,7 @@ class ChatBandClient {
         "Tetris Attack/Trumpet.mp3"
     ];
 
-    violinFiles = [
+    #violinFiles = [
         "Duck Tales/Moon Surface (The Moon) (Violin).mp3",
         "Ninja Gaiden/A Hero's End (Ending 1) (Violin).mp3",
         "Ninja Gaiden/For Your Love (Ending III) (Violin).mp3",
@@ -166,7 +166,7 @@ class ChatBandClient {
         "Solstice/Violin 1.mp3"
     ];
 
-    whistleFiles = [
+    #whistleFiles = [
         "Chrono Trigger/Frog's Theme (Whistle).mp3",
         "Kirby's Adventure/Whistle.mp3",
         "Neutopia II/Whistle.mp3",
@@ -187,39 +187,39 @@ class ChatBandClient {
 
         switch (jsonResponse.eventData.instrument) {
             case "bass":
-                this.play(this.bassFiles);
+                this.#play(this.#bassFiles);
                 return true;
 
             case "drums":
-                this.play(this.drumFiles);
+                this.#play(this.#drumFiles);
                 return true;
 
             case "guitar":
-                this.play(this.guitarFiles);
+                this.#play(this.#guitarFiles);
                 return true;
 
             case "magic":
-                this.play(this.magicFiles);
+                this.#play(this.#magicFiles);
                 return true;
 
             case "piano":
-                this.play(this.pianoFiles);
+                this.#play(this.#pianoFiles);
                 return true;
 
             case "synth":
-                this.play(this.synthFiles);
+                this.#play(this.#synthFiles);
                 return true;
 
             case "trumpet":
-                this.play(this.trumpetFiles);
+                this.#play(this.#trumpetFiles);
                 return true;
 
             case "violin":
-                this.play(this.violinFiles);
+                this.#play(this.#violinFiles);
                 return true;
 
             case "whistle":
-                this.play(this.whistleFiles);
+                this.#play(this.#whistleFiles);
                 return true;
 
             default:
@@ -227,9 +227,9 @@ class ChatBandClient {
         }
     }
 
-    play(instrumentFiles) {
+    #play(instrumentFiles) {
         var randomNumber = Math.floor(Math.random() * instrumentFiles.length);
-        var instrumentFile = this.baseDir + "/" + instrumentFiles[randomNumber];
+        var instrumentFile = this.#baseDir + "/" + instrumentFiles[randomNumber];
 
         const audio = new Audio(instrumentFile);
         audio.loop = false;
