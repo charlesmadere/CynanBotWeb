@@ -85,8 +85,8 @@ class PredictionData {
             "type": "doughnut",
             "options": {
                 "animation": {
-                    "duration": 1000,
-                    "easing": "easeInOutBack"
+                    "duration": 2000,
+                    "easing": "easeInOutBounce"
                 },
                 "borderColor": "rgba(0, 0, 0, 0)",
                 "events": [],
