@@ -11,13 +11,13 @@ function areOutcomesDayAtTheRaces(outcomeIdToOutcome) {
     outcomeIdToOutcome.forEach((value, key, map) => {
         const title = value.title.toLowerCase();
 
-        if (title.contains("bob-omb") || title.contains("bobomb")) {
+        if (title.includes("bob-omb") || title.includes("bobomb")) {
             foundBobOmb = true;
-        } else if (title.contains("boo")) {
+        } else if (title.includes("boo")) {
             foundBoo = true;
-        } else if (title.contains("thwomp")) {
+        } else if (title.includes("thwomp")) {
             foundThwomp = true;
-        } else if (title.contains("whomp")) {
+        } else if (title.includes("whomp")) {
             foundWhomp = true;
         }
     });
@@ -177,13 +177,13 @@ class PredictionData {
         this.#outcomeIdToOutcome.forEach((value, key, map) => {
             const title = value.title.toLowerCase();
 
-            if (title.contains("bob-omb") || title.contains("bobomb")) {
+            if (title.includes("bob-omb") || title.includes("bobomb")) {
                 value.setColor(new OutcomeColor(74, 74, 74));
-            } else if (title.contains("boo")) {
+            } else if (title.includes("boo")) {
                 value.setColor(new OutcomeColor(255, 255, 255));
-            } else if (title.contains("thwomp")) {
+            } else if (title.includes("thwomp")) {
                 value.setColor(new OutcomeColor(64, 178, 255));
-            } else if (title.contains("whomp")) {
+            } else if (title.includes("whomp")) {
                 value.setColor(new OutcomeColor(182, 191, 197));
             }
         });
