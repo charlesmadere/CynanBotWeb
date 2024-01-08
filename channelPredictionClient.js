@@ -1,3 +1,30 @@
+function areOutcomesDayAtTheRaces(outcomeIdToOutcome) {
+    if (outcomeIdToOutcome.size != 4) {
+        return false;
+    }
+
+    var foundBobOmb = false;
+    var foundBoo = false;
+    var foundThwomp = false;
+    var foundWhomp = false;
+
+    outcomeIdToOutcome.forEach((value, key, map) => {
+        const title = value.title.toLowerCase();
+
+        if (title.contains("bob-omb") || title.contains("bobomb")) {
+            foundBobOmb = true;
+        } else if (title.contains("boo")) {
+            foundBoo = true;
+        } else if (title.contains("thwomp")) {
+            foundThwomp = true;
+        } else if (title.contains("whomp")) {
+            foundWhomp = true;
+        }
+    });
+
+    return foundBobOmb && foundBoo && foundThwomp && foundWhomp;
+}
+
 function randomInt() {
     let max = 100;
     let min = 0;
@@ -32,6 +59,10 @@ class PredictionOutcome {
         this.users = 0;
     }
 
+    setColor(color) {
+        this.color = color;
+    }
+
     update(channelPoints, users) {
         this.channelPoints = channelPoints;
         this.users = users;
@@ -46,27 +77,6 @@ class PredictionData {
     constructor(eventId, title) {
         this.eventId = eventId;
         this.title = title;
-    }
-
-    setPoints(outcomes) {
-        outcomes.forEach(outcome => {
-            if (!this.#outcomeIdToOutcome.has(outcome.outcomeId)) {
-                this.#outcomeIdToOutcome.set(
-                    outcome.outcomeId,
-                    new PredictionOutcome(
-                        new OutcomeColor(
-                            outcome.color.red,
-                            outcome.color.green,
-                            outcome.color.blue
-                        ),
-                        outcome.outcomeId,
-                        outcome.title
-                    )
-                );
-            }
-
-            this.#outcomeIdToOutcome.get(outcome.outcomeId).update(outcome.channelPoints, outcome.users)
-        });
     }
 
     getFullChartDataStructure() {
@@ -143,6 +153,52 @@ class PredictionData {
         return updatedData;
     }
 
+    setOutcomes(outcomes) {
+        outcomes.forEach(outcome => {
+            const predictionOutcome = new PredictionOutcome(
+                new OutcomeColor(
+                    outcome.color.red,
+                    outcome.color.green,
+                    outcome.color.blue
+                ),
+                outcome.outcomeId,
+                outcome.title
+            );
+
+            this.#outcomeIdToOutcome.set(predictionOutcome.outcomeId, predictionOutcome);
+        });
+
+        if (areOutcomesDayAtTheRaces(this.#outcomeIdToOutcome)) {
+            this.#updateOutcomeColorsToDayAtTheRaces();
+        }
+    }
+
+    #updateOutcomeColorsToDayAtTheRaces() {
+        this.#outcomeIdToOutcome.forEach((value, key, map) => {
+            const title = value.title.toLowerCase();
+
+            if (title.contains("bob-omb") || title.contains("bobomb")) {
+                value.setColor(new OutcomeColor(74, 74, 74));
+            } else if (title.contains("boo")) {
+                value.setColor(new OutcomeColor(255, 255, 255));
+            } else if (title.contains("thwomp")) {
+                value.setColor(new OutcomeColor(64, 178, 255));
+            } else if (title.contains("whomp")) {
+                value.setColor(new OutcomeColor(182, 191, 197));
+            }
+        });
+    }
+
+    updateOutcomes(outcomes) {
+        outcomes.forEach(outcome => {
+            const predictionOutcome = this.#outcomeIdToOutcome.get(outcome.outcomeId);
+
+            if (predictionOutcome != null) {
+                predictionOutcome.update(outcome.channelPoints, outcome.users)
+            }
+        });
+    }
+
 }
 
 class ChannelPredictionClient {
@@ -188,7 +244,7 @@ class ChannelPredictionClient {
             eventData.title
         );
 
-        ongoingPrediction.setPoints(eventData.outcomes);
+        ongoingPrediction.setOutcomes(eventData.outcomes);
         this.ongoingPrediction = ongoingPrediction;
     }
 
@@ -204,7 +260,7 @@ class ChannelPredictionClient {
         const ongoingPrediction = this.ongoingPrediction;
 
         if (ongoingPrediction != null) {
-            ongoingPrediction.setPoints(eventData.outcomes);
+            ongoingPrediction.updateOutcomes(eventData.outcomes);
         }
     }
 
