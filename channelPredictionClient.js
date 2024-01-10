@@ -178,13 +178,13 @@ class PredictionData {
             const title = value.title.toLowerCase();
 
             if (title.includes("bob-omb") || title.includes("bobomb")) {
-                value.setColor(new OutcomeColor(74, 74, 74));
+                value.setColor(new OutcomeColor(193, 107, 2));
             } else if (title.includes("boo")) {
-                value.setColor(new OutcomeColor(255, 255, 255));
+                value.setColor(new OutcomeColor(230, 230, 230));
             } else if (title.includes("thwomp")) {
                 value.setColor(new OutcomeColor(64, 178, 255));
             } else if (title.includes("whomp")) {
-                value.setColor(new OutcomeColor(182, 191, 197));
+                value.setColor(new OutcomeColor(85, 94, 103));
             }
         });
     }
