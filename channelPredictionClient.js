@@ -95,10 +95,13 @@ class PredictionData {
             "type": "doughnut",
             "options": {
                 "animation": {
-                    "duration": 2000,
+                    "animateRotate": true,
+                    "animateScale": true,
+                    "duration": 3000,
                     "easing": "easeInOutBounce"
                 },
-                "borderColor": "rgba(0, 0, 0, 0)",
+                "borderColor": "rgba(0, 0, 0, 0.25)",
+                "cutout": "25%",
                 "events": [],
                 "layout": {
                     "autoPadding": true
