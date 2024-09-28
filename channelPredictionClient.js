@@ -8,7 +8,7 @@ function areOutcomesDayAtTheRaces(outcomeIdToOutcome) {
     var foundThwomp = false;
     var foundWhomp = false;
 
-    outcomeIdToOutcome.forEach((value, _, _) => {
+    outcomeIdToOutcome.forEach((value, key, map) => {
         const title = value.title.toLowerCase();
 
         if (title.includes("bob-omb") || title.includes("bobomb")) {
