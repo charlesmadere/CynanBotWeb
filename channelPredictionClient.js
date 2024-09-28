@@ -8,7 +8,7 @@ function areOutcomesDayAtTheRaces(outcomeIdToOutcome) {
     var foundThwomp = false;
     var foundWhomp = false;
 
-    outcomeIdToOutcome.forEach((value, key, map) => {
+    outcomeIdToOutcome.forEach((value, _, _) => {
         const title = value.title.toLowerCase();
 
         if (title.includes("bob-omb") || title.includes("bobomb")) {
@@ -100,9 +100,18 @@ class PredictionData {
                     "duration": 3000,
                     "easing": "easeInOutBounce"
                 },
+                "animations": {
+                    "tension": {
+                        "duration": 3000,
+                        "easing": "linear",
+                        "from": 1,
+                        "to": 0,
+                        "loop": true
+                    }
+                },
                 "borderColor": "rgba(0, 0, 0, 0.25)",
                 "cutout": "25%",
-                "events": [],
+                "events": [ ],
                 "layout": {
                     "autoPadding": true
                 },
