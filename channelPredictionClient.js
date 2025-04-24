@@ -44,7 +44,7 @@ class OutcomeColor {
     }
 
     getRgbString() {
-        return "rgb(" + this.#red + ", " + this.#green + ", " + this.#blue + ")";
+        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.5)";
     }
 
 }
