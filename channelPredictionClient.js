@@ -44,7 +44,7 @@ class OutcomeColor {
     }
 
     getRgbString() {
-        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.5)";
+        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.8)";
     }
 
 }
@@ -109,7 +109,7 @@ class PredictionData {
                         "loop": true
                     }
                 },
-                "borderColor": "rgba(0, 0, 0, 0.25)",
+                "borderColor": "rgba(0, 0, 0, 0.5)",
                 "cutout": "25%",
                 "events": [ ],
                 "layout": {
