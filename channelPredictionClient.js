@@ -44,7 +44,7 @@ class OutcomeColor {
     }
 
     getRgbString() {
-        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.8)";
+        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.50)";
     }
 
 }
@@ -109,7 +109,7 @@ class PredictionData {
                         "loop": true
                     }
                 },
-                "borderColor": "rgba(0, 0, 0, 0.5)",
+                "borderColor": "rgba(0, 0, 0, 0.25)",
                 "cutout": "25%",
                 "events": [ ],
                 "layout": {
@@ -132,10 +132,12 @@ class PredictionData {
                 "responsive": true
             },
             "data": {
-                "datasets": [{
-                    "data": data,
-                    "backgroundColor": backgroundColor
-                }]
+                "datasets": [
+                    {
+                        "data": data,
+                        "backgroundColor": backgroundColor
+                    }
+                ]
             }
         };
     }
