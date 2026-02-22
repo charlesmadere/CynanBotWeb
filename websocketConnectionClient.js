@@ -46,7 +46,7 @@ class OutcomeColor {
     }
 
     getRgbString() {
-        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.8)";
+        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.5)";
     }
 }
 
@@ -111,7 +111,7 @@ class PredictionData {
                         "loop": true
                     }
                 },
-                "borderColor": "rgba(0, 0, 0, 0.5)",
+                "borderColor": "rgba(0, 0, 0, 0.25)",
                 "cutout": "25%",
                 "events": [ ],
                 "layout": {
@@ -134,10 +134,12 @@ class PredictionData {
                 "responsive": true
             },
             "data": {
-                "datasets": [{
-                    "data": data,
-                    "backgroundColor": backgroundColor
-                }]
+                "datasets": [
+                    {
+                        "data": data,
+                        "backgroundColor": backgroundColor
+                    }
+                ]
             }
         };
     }
@@ -280,10 +282,27 @@ class ChannelPredictionHelper {
 }
 
 
+class MouseCursorHelper {
+
+    constructor() {
+        // intentionally empty
+    }
+
+    handleEvent(jsonResponse) {
+        // TODO
+        return false;
+    }
+}
+
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
+
 const channelPredictionHelper = new ChannelPredictionHelper();
-const channelPredictionChartContext = document.getElementById("channelPredictionChart");
+const channelPredictionContext = document.getElementById("channelPredictionChart");
 var chart = null;
+
+const mouseCursorHelper = new MouseCursorHelper();
+const mouseCursorContext = document.getElementById("mouseCursorContainer");
 
 function updateChart(ongoingPrediction) {
     if (ongoingPrediction == null) {
@@ -293,7 +312,7 @@ function updateChart(ongoingPrediction) {
         }
     } else if (chart == null) {
         const fullDataStructure = ongoingPrediction.getFullChartDataStructure()
-        chart = new Chart(channelPredictionChartContext, fullDataStructure);
+        chart = new Chart(channelPredictionContext, fullDataStructure);
     } else {
         const updatedDataStructure = ongoingPrediction.getUpdatedChartDataStructure()
 
@@ -322,7 +341,7 @@ const websocketFunction = async () => {
                 break;
 
             case "mouseCursor":
-                // TODO
+                mouseCursorHelper.handleEvent(jsonResponse);
                 break;
 
             default:

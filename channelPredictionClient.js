@@ -46,7 +46,7 @@ class OutcomeColor {
     }
 
     getRgbString() {
-        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.50)";
+        return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.5)";
     }
 }
 
@@ -217,7 +217,7 @@ class PredictionData {
 }
 
 
-class ChannelPredictionClient {
+class ChannelPredictionHelper {
 
     ongoingPrediction = null;
 
@@ -283,8 +283,9 @@ class ChannelPredictionClient {
 
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
-const channelPredictionClient = new ChannelPredictionClient();
-const ctx = document.getElementById("channelPredictionChart");
+
+const channelPredictionHelper = new ChannelPredictionHelper();
+const channelPredictionContext = document.getElementById("channelPredictionChart");
 var chart = null;
 
 function updateChart(ongoingPrediction) {
@@ -295,7 +296,7 @@ function updateChart(ongoingPrediction) {
         }
     } else if (chart == null) {
         const fullDataStructure = ongoingPrediction.getFullChartDataStructure()
-        chart = new Chart(ctx, fullDataStructure);
+        chart = new Chart(channelPredictionContext, fullDataStructure);
     } else {
         const updatedDataStructure = ongoingPrediction.getUpdatedChartDataStructure()
 
@@ -317,11 +318,11 @@ const websocketFunction = async () => {
     webSocket.onmessage = function (event) {
         const jsonResponse = JSON.parse(event.data);
 
-        if (channelPredictionClient.handleEvent(jsonResponse)) {
-            console.log("channelPredictionClient handled event:", jsonResponse);
-            updateChart(channelPredictionClient.ongoingPrediction);
+        if (channelPredictionHelper.handleEvent(jsonResponse)) {
+            console.log("channelPredictionHelper handled event: ", jsonResponse);
+            updateChart(channelPredictionHelper.ongoingPrediction);
         } else {
-            console.log("Unhandled event:", jsonResponse);
+            console.log("Unhandled event: ", jsonResponse);
         }
     };
 };
