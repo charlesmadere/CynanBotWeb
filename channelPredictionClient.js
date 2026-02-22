@@ -25,11 +25,13 @@ function areOutcomesDayAtTheRaces(outcomeIdToOutcome) {
     return foundBobOmb && foundBoo && foundThwomp && foundWhomp;
 }
 
+
 function randomInt() {
     let max = 100;
     let min = 0;
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 
 class OutcomeColor {
 
@@ -46,8 +48,8 @@ class OutcomeColor {
     getRgbString() {
         return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.50)";
     }
-
 }
+
 
 class PredictionOutcome {
 
@@ -67,8 +69,8 @@ class PredictionOutcome {
         this.channelPoints = channelPoints;
         this.users = users;
     }
-
 }
+
 
 class PredictionData {
 
@@ -212,8 +214,8 @@ class PredictionData {
             }
         });
     }
-
 }
+
 
 class ChannelPredictionClient {
 
@@ -277,8 +279,8 @@ class ChannelPredictionClient {
             ongoingPrediction.updateOutcomes(eventData.outcomes);
         }
     }
-
 }
+
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 const channelPredictionClient = new ChannelPredictionClient();
@@ -310,7 +312,7 @@ const websocketFunction = async () => {
 
     webSocket.onerror = function (event) {
         console.error("WebSocket error occurred:", event);
-    }
+    };
 
     webSocket.onmessage = function (event) {
         const jsonResponse = JSON.parse(event.data);

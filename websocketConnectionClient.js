@@ -25,11 +25,13 @@ function areOutcomesDayAtTheRaces(outcomeIdToOutcome) {
     return foundBobOmb && foundBoo && foundThwomp && foundWhomp;
 }
 
+
 function randomInt() {
     let max = 100;
     let min = 0;
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 
 class OutcomeColor {
 
@@ -46,8 +48,8 @@ class OutcomeColor {
     getRgbString() {
         return "rgba(" + this.#red + ", " + this.#green + ", " + this.#blue + ", 0.8)";
     }
-
 }
+
 
 class PredictionOutcome {
 
@@ -67,8 +69,8 @@ class PredictionOutcome {
         this.channelPoints = channelPoints;
         this.users = users;
     }
-
 }
+
 
 class PredictionData {
 
@@ -210,10 +212,10 @@ class PredictionData {
             }
         });
     }
-
 }
 
-class ChannelPredictionClient {
+
+class ChannelPredictionHelper {
 
     ongoingPrediction = null;
 
@@ -275,11 +277,11 @@ class ChannelPredictionClient {
             ongoingPrediction.updateOutcomes(eventData.outcomes);
         }
     }
-
 }
 
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
-const channelPredictionClient = new ChannelPredictionClient();
+const channelPredictionHelper = new ChannelPredictionHelper();
 const ctx = document.getElementById("channelPredictionChart");
 var chart = null;
 
@@ -307,17 +309,25 @@ const websocketFunction = async () => {
     var webSocket = new WebSocket("ws://localhost:8765");
 
     webSocket.onerror = function (event) {
-        console.error("WebSocket error occurred:", event);
-    }
+        console.error("WebSocket error occurred: ", event);
+    };
 
     webSocket.onmessage = function (event) {
         const jsonResponse = JSON.parse(event.data);
 
-        if (channelPredictionClient.handleEvent(jsonResponse)) {
-            console.log("channelPredictionClient handled event:", jsonResponse);
-            updateChart(channelPredictionClient.ongoingPrediction);
-        } else {
-            console.log("Unhandled event:", jsonResponse);
+        switch (jsonResponse.eventType) {
+            case "channelPrediction":
+                channelPredictionHelper.handleEvent(jsonResponse);
+                updateChart(channelPredictionHelper.ongoingPrediction);
+                break;
+
+            case "mouseCursor":
+                // TODO
+                break;
+
+            default:
+                console.log("Unhandled event: ", jsonResponse);
+                break;
         }
     };
 };
