@@ -282,7 +282,7 @@ class ChannelPredictionHelper {
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 const channelPredictionHelper = new ChannelPredictionHelper();
-const ctx = document.getElementById("channelPredictionChart");
+const channelPredictionChartContext = document.getElementById("channelPredictionChart");
 var chart = null;
 
 function updateChart(ongoingPrediction) {
@@ -293,7 +293,7 @@ function updateChart(ongoingPrediction) {
         }
     } else if (chart == null) {
         const fullDataStructure = ongoingPrediction.getFullChartDataStructure()
-        chart = new Chart(ctx, fullDataStructure);
+        chart = new Chart(channelPredictionChartContext, fullDataStructure);
     } else {
         const updatedDataStructure = ongoingPrediction.getUpdatedChartDataStructure()
 
