@@ -289,8 +289,14 @@ class MouseCursorHelper {
     }
 
     handleEvent(jsonResponse) {
+        if (jsonResponse.eventType !== "mouseCursor") {
+            return false;
+        }
+
+        const eventData = jsonResponse.eventData;
+
         // TODO
-        return false;
+        return true;
     }
 }
 
